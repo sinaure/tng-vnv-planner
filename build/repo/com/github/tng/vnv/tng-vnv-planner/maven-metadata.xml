@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.github.tng.vnv</groupId>
+  <artifactId>tng-vnv-planner</artifactId>
+  <versioning>
+    <release>latest</release>
+    <versions>
+      <version>latest</version>
+    </versions>
+    <lastUpdated>20190228155214</lastUpdated>
+  </versioning>
+</metadata>

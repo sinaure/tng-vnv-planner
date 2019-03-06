@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired
 class TestControllerTest extends AbstractSpec {
 
     final def TEST_SUITE_ID='input0ts-75f5-4ca1-90c8-12ec80a79821'
+	final def TEST_SUITE_TAG='aux_test'
     @Autowired
     TestPlatformManagerMock testPlatformManagerMock
 
@@ -61,4 +62,16 @@ class TestControllerTest extends AbstractSpec {
         testPlatformManagerMock.reset()
 
     }
+	
+	void "retrieval of a list of NetworkServices whith tag existing on tags list"() {
+		when:
+		List nss = getForEntity('/tng-vnv-planner/api/v1/schedulers/tests/testTag/{testTag}/services', List,TEST_SUITE_TAG).body
+		then:
+
+		nss.size() == 1
+
+		cleanup:
+		testPlatformManagerMock.reset()
+
+	}
 }

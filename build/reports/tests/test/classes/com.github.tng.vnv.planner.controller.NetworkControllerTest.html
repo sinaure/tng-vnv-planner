@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.github.tng.vnv.planner.controller.NetworkControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.github.tng.vnv.planner.controller.NetworkControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.github.tng.vnv.planner.controller.html">com.github.tng.vnv.planner.controller</a> &gt; NetworkControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">1</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">20.533s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox skipped" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">retrieval of a single test suite's related testSuites should successfully all the tag related tests</td>
+<td>0.125s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">schedule Service GOBETWEEN with tag: http-advanced should run once with TEST-HTTP-BENCHMARK-ADVANCED with 1 Result and 1 testPlan</td>
+<td>10.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">schedule single NetworkService should produce successfully 1 Result for 1 testPlan</td>
+<td>10.369s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="skipped">when one service is related with one test should run only once</td>
+<td>-</td>
+<td class="skipped">ignored</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2019-02-28 16:49:02.309  INFO 14688 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.mrduguo.spring.test.AbstractSpec]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-28 16:49:02.319  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-28 16:49:02.320  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2019-02-28 16:49:02.320  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2019-02-28 16:49:02.321  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@679f1468, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7cfd1f43, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@11514d33, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2d7f7393, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@32dc1e00, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@264f081f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3dece130, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6bd9fef5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@39a7c190, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67f6394b]
+2019-02-28 16:49:02.507 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@61e9bb717 pairs: {POST /tng-vnv-planner/api/v1/schedulers/services HTTP/1.1: null}{Accept: application/json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 55}
+2019-02-28 16:49:02.666 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@bce9d704 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Length: 0}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:02.706 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@54bc28416 pairs: {GET /tng-vnv-planner/mock/gk/services/input0ns-f213-4fae-8d3f-04358e1e1445 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:02.800 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1d524a0f5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:02.819  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findNetworkService call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/services/{networkServiceId}, status: 200
+2019-02-28 16:49:02.832  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.scheduler.Scheduler  : ##vnvlog: 
+networkServices: [NetworkService{uuid='input0ns-f213-4fae-8d3f-04358e1e1445', nsd=nsd{testingTags=[latency, aux_test]}, status='active'}], 
+testSuites: []
+2019-02-28 16:49:02.841 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@48c6646b6 pairs: {GET /tng-vnv-planner/mock/gk/tests/descriptors HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:02.895 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@18f55eb35 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:02.924  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findTssByTestTag call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/tests/descriptors, status: 200
+2019-02-28 16:49:02.943 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@2b5524706 pairs: {GET /tng-vnv-planner/mock/gk/packages HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:02.965 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@105dd3595 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:02.988  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findPackageId call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/packages, status: 200
+2019-02-28 16:49:03.025 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@19a289266 pairs: {GET /tng-vnv-planner/mock/gk/packages HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:03.081 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@369e8ee95 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.087  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findPackageId call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/packages, status: 200
+2019-02-28 16:49:03.091 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5153b7316 pairs: {GET /tng-vnv-planner/mock/gk/packages HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:03.127 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3f8236155 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.139  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findPackageId call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/packages, status: 200
+2019-02-28 16:49:03.141 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@125702b56 pairs: {GET /tng-vnv-planner/mock/gk/packages HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:03.164 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5e71d5f15 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.173  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findPackageId call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/packages, status: 200
+2019-02-28 16:49:03.175 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@d380f826 pairs: {GET /tng-vnv-planner/mock/gk/tests/descriptors HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:03.189 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5db69d895 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.191  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findTssByTestTag call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/tests/descriptors, status: 200
+2019-02-28 16:49:03.217  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.scheduler.Scheduler  : 
+ ---- 
+##vnvlog-v.2: testPlans:
+
+ ns's(#1)
+ nsId: input0ns-f213-4fae-8d3f-04358e1e1445, testingTags: [latency, aux_test] 
+	 - ts's(#1) 
+		tsId: input0ts-75f5-4ca1-90c8-12ec80a79821, testTag's: ( 'http' 'latency' )
+ 
+2019-02-28 16:49:03.223  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before createTestPlan: [not created yet]
+2019-02-28 16:49:03.226  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: (networkServiceId: input0ns-f213-4fae-8d3f-04358e1e1445, testListSize: 1, networkService.name: haproxy)
+2019-02-28 16:49:03.226  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: issue!:testSuites.first()?.packageId: 2b410f39-8d3f-4540-bdfe-ff0e13e8ac97
+2019-02-28 16:49:03.355 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4954778e7 pairs: {POST /tng-vnv-planner/mock/trr/test-plans HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 597}
+2019-02-28 16:49:03.381 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5625e54e5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.382  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.createTestPlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans, status: 200
+2019-02-28 16:49:03.382  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after createTestPlan: 6a837b29-b4e5-479f-8484-098e1b678d65
+2019-02-28 16:49:03.382  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before deployNs: [not created yet]
+2019-02-28 16:49:03.396  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog: testPlan: [packageId: 2b410f39-8d3f-4540-bdfe-ff0e13e8ac97, nsiList.size: 1, tsResults.size: 1]
+2019-02-28 16:49:03.397  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().serviceUuid? input0ns-f213-4fae-8d3f-04358e1e1445
+2019-02-28 16:49:03.425 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@45b4fb247 pairs: {POST /tng-vnv-planner/mock/tpm/requests HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 137}
+2019-02-28 16:49:03.472 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@432f7c755 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.473  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.deployNsForTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests, status: 200
+2019-02-28 16:49:03.477 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1a22ac316 pairs: {GET /tng-vnv-planner/mock/tpm/requests/af98552c-5986-4999-a89a-88ff205fceb5 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:03.493 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@6160004a5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:02 GMT}
+2019-02-28 16:49:03.494  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.deployNsForTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests/{requestId}, status: 200
+2019-02-28 16:49:08.507  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().status? null
+2019-02-28 16:49:08.508  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().instanceUuid? null
+2019-02-28 16:49:08.513 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1b094f967 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6a837b29-b4e5-479f-8484-098e1b678d65 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 638}
+2019-02-28 16:49:08.522 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3bfcf8725 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:08 GMT}
+2019-02-28 16:49:08.524  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+2019-02-28 16:49:08.524  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after deployNs (#1): af98552c-5986-4999-a89a-88ff205fceb5, status: READY
+2019-02-28 16:49:08.524  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before executeTests with testSuiteResults: [not created yet]
+2019-02-28 16:49:08.555  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests: (
+ - TestPlanOld{ 
+uuid='6a837b29-b4e5-479f-8484-098e1b678d65', status='NS_DEPLOYED', 
+nsi's(#1)=[com.github.tng.vnv.planner.model.NetworkServiceInstance(af98552c-5986-4999-a89a-88ff205fceb5, READY)], 
+tsr's(#1)=[
+ 	TestSuiteResult{uuid='f109daf6-5e0a-4cc7-9c57-3fab40530b00', serviceUuid='input0ns-f213-4fae-8d3f-04358e1e1445', testUuid='input0ts-75f5-4ca1-90c8-12ec80a79821', status='null'}]})
+2019-02-28 16:49:08.555  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests - testPlan.networkServiceInstances.first().instanceUuid: af98552c-5986-4999-a89a-88ff205fceb5
+2019-02-28 16:49:08.556  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests - testPlan.networkServiceInstances.first().serviceUuid: input0ns-f213-4fae-8d3f-04358e1e1445
+2019-02-28 16:49:08.556  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog-v.2 TestExecutionEngine.executeTests - begin POST_request_to_TEE with testSuiteResult: 
+ 	TestSuiteResult{uuid='f109daf6-5e0a-4cc7-9c57-3fab40530b00', serviceUuid='input0ns-f213-4fae-8d3f-04358e1e1445', testUuid='input0ts-75f5-4ca1-90c8-12ec80a79821', status='null'}
+2019-02-28 16:49:08.559 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@609fda657 pairs: {POST /tng-vnv-planner/mock/tee/test-suite-results HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 327}
+2019-02-28 16:49:08.588 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4e1889cb5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:08 GMT}
+2019-02-28 16:49:08.591  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestExecutionEngine.executeTests call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tee/test-suite-results, status: 200
+2019-02-28 16:49:08.593  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog-v.2 TestExecutionEngine.executeTests - end POST_request_to_TEE with testSuiteResult.uuid: a141920a-9f52-42fa-a832-64ec1af21c57
+2019-02-28 16:49:08.595 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@579dfb017 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6a837b29-b4e5-479f-8484-098e1b678d65 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 673}
+2019-02-28 16:49:08.617 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@494f4f655 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:08 GMT}
+2019-02-28 16:49:08.617  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+2019-02-28 16:49:08.618  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after executeTests with testSuiteResults(#1)
+2019-02-28 16:49:08.621  INFO 14688 --- [  vnv-planner-1] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.destroyNsAfterTest: (
+ - TestPlanOld{ 
+uuid='6a837b29-b4e5-479f-8484-098e1b678d65', status='SUCCESS', 
+nsi's(#1)=[com.github.tng.vnv.planner.model.NetworkServiceInstance(af98552c-5986-4999-a89a-88ff205fceb5, READY)], 
+tsr's(#1)=[
+ 	TestSuiteResult{uuid='a141920a-9f52-42fa-a832-64ec1af21c57', serviceUuid='input0ns-f213-4fae-8d3f-04358e1e1445', testUuid='input0ts-75f5-4ca1-90c8-12ec80a79821', status='SUCCESS'}]})
+2019-02-28 16:49:08.623 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@22662e327 pairs: {POST /tng-vnv-planner/mock/tpm/requests HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 140}
+2019-02-28 16:49:08.631 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1a9b9c8c5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:08 GMT}
+2019-02-28 16:49:08.634  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.destroyNsAfterTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests, status: 200
+2019-02-28 16:49:08.639 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@74d8a1c97 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6a837b29-b4e5-479f-8484-098e1b678d65 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 610}
+2019-02-28 16:49:08.650 DEBUG 14688 --- [  vnv-planner-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@67dc16de5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:08 GMT}
+2019-02-28 16:49:08.651  INFO 14688 --- [  vnv-planner-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+2019-02-28 16:49:12.710 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@74cb99545 pairs: {GET /tng-vnv-planner/api/v1/schedulers/services/input0ns-f213-4fae-8d3f-04358e1e1445/tests HTTP/1.1: null}{Accept: application/json, application/*+json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.724 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@6b7a80316 pairs: {GET /tng-vnv-planner/mock/gk/services/input0ns-f213-4fae-8d3f-04358e1e1445 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.743 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1150c5dd5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.745  INFO 14688 --- [io-11409-exec-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findNetworkService call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/services/{networkServiceId}, status: 200
+2019-02-28 16:49:12.749 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3f6444866 pairs: {GET /tng-vnv-planner/mock/gk/tests/descriptors HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.779 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@288d009a5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.789  INFO 14688 --- [io-11409-exec-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findTssByTestTag call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/tests/descriptors, status: 200
+2019-02-28 16:49:12.792 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@11e5c4596 pairs: {GET /tng-vnv-planner/mock/gk/tests/descriptors HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.808 DEBUG 14688 --- [io-11409-exec-1] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3b30390b5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.810  INFO 14688 --- [io-11409-exec-1] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findTssByTestTag call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/tests/descriptors, status: 200
+2019-02-28 16:49:12.814 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1c3725275 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.838 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@16854f577 pairs: {POST /tng-vnv-planner/api/v1/schedulers/services HTTP/1.1: null}{Accept: application/json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 55}
+2019-02-28 16:49:12.842 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@33be5ebd4 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Length: 0}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.845 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@6efecd186 pairs: {GET /tng-vnv-planner/mock/gk/services/d07742ed-9429-4a07-b7af-d0b24a6d5c4c HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.853 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@60393eb75 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.855  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findNetworkService call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/services/{networkServiceId}, status: 200
+2019-02-28 16:49:12.855  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.scheduler.Scheduler  : ##vnvlog: 
+networkServices: [NetworkService{uuid='d07742ed-9429-4a07-b7af-d0b24a6d5c4c', nsd=nsd{testingTags=[http-advanced]}, status='active'}], 
+testSuites: []
+2019-02-28 16:49:12.856 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@6406a6686 pairs: {GET /tng-vnv-planner/mock/gk/tests/descriptors HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.863 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@2104348c5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.864  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findTssByTestTag call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/tests/descriptors, status: 200
+2019-02-28 16:49:12.866 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@390abbb96 pairs: {GET /tng-vnv-planner/mock/gk/packages HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.873 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@10eff6a95 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.874  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestCatalogue.findPackageId call_endpoint: http://localhost:11409/tng-vnv-planner/mock/gk/packages, status: 200
+2019-02-28 16:49:12.875  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.scheduler.Scheduler  : 
+ ---- 
+##vnvlog-v.2: testPlans:
+
+ ns's(#1)
+ nsId: d07742ed-9429-4a07-b7af-d0b24a6d5c4c, testingTags: [http-advanced] 
+	 - ts's(#1) 
+		tsId: aa5c779a-8cc7-47a9-9112-d2ff348898b4, testTag's: ( 'http-advanced' )
+ 
+2019-02-28 16:49:12.875  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before createTestPlan: [not created yet]
+2019-02-28 16:49:12.876  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: (networkServiceId: d07742ed-9429-4a07-b7af-d0b24a6d5c4c, testListSize: 1, networkService.name: gobetween)
+2019-02-28 16:49:12.876  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: issue!:testSuites.first()?.packageId: a3acb16d-c314-4122-9b3d-9c180547d580
+2019-02-28 16:49:12.878 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@410b273a7 pairs: {POST /tng-vnv-planner/mock/trr/test-plans HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 599}
+2019-02-28 16:49:12.882 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@412bcbc35 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.883  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.createTestPlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans, status: 200
+2019-02-28 16:49:12.884  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after createTestPlan: 6b0cccae-4c03-414c-9717-b200121ed725
+2019-02-28 16:49:12.884  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before deployNs: [not created yet]
+2019-02-28 16:49:12.885  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog: testPlan: [packageId: a3acb16d-c314-4122-9b3d-9c180547d580, nsiList.size: 1, tsResults.size: 1]
+2019-02-28 16:49:12.886  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().serviceUuid? d07742ed-9429-4a07-b7af-d0b24a6d5c4c
+2019-02-28 16:49:12.889 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5a0f4b107 pairs: {POST /tng-vnv-planner/mock/tpm/requests HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 137}
+2019-02-28 16:49:12.894 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4565f6415 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.895  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.deployNsForTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests, status: 200
+2019-02-28 16:49:12.896 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@6b6240c66 pairs: {GET /tng-vnv-planner/mock/tpm/requests/e3927ed0-788f-4bf5-90f1-c73a683ef693 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:12.907 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@59d12ed5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:12 GMT}
+2019-02-28 16:49:12.908  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.deployNsForTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests/{requestId}, status: 200
+2019-02-28 16:49:17.909  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().status? null
+2019-02-28 16:49:17.909  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.deployNsForTest - testPlan.networkServiceInstances.first().instanceUuid? null
+2019-02-28 16:49:17.910 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@4f57b3977 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6b0cccae-4c03-414c-9717-b200121ed725 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 640}
+2019-02-28 16:49:17.916 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@364aaecb5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:17 GMT}
+2019-02-28 16:49:17.919  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+2019-02-28 16:49:17.919  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after deployNs (#1): e3927ed0-788f-4bf5-90f1-c73a683ef693, status: READY
+2019-02-28 16:49:17.920  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: before executeTests with testSuiteResults: [not created yet]
+2019-02-28 16:49:17.920  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests: (
+ - TestPlanOld{ 
+uuid='6b0cccae-4c03-414c-9717-b200121ed725', status='NS_DEPLOYED', 
+nsi's(#1)=[com.github.tng.vnv.planner.model.NetworkServiceInstance(e3927ed0-788f-4bf5-90f1-c73a683ef693, READY)], 
+tsr's(#1)=[
+ 	TestSuiteResult{uuid='a5381f1e-e473-4e69-a333-51b8b43e34e9', serviceUuid='d07742ed-9429-4a07-b7af-d0b24a6d5c4c', testUuid='aa5c779a-8cc7-47a9-9112-d2ff348898b4', status='null'}]})
+2019-02-28 16:49:17.921  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests - testPlan.networkServiceInstances.first().instanceUuid: e3927ed0-788f-4bf5-90f1-c73a683ef693
+2019-02-28 16:49:17.921  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog TestExecutionEngine.executeTests - testPlan.networkServiceInstances.first().serviceUuid: d07742ed-9429-4a07-b7af-d0b24a6d5c4c
+2019-02-28 16:49:17.921  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog-v.2 TestExecutionEngine.executeTests - begin POST_request_to_TEE with testSuiteResult: 
+ 	TestSuiteResult{uuid='a5381f1e-e473-4e69-a333-51b8b43e34e9', serviceUuid='d07742ed-9429-4a07-b7af-d0b24a6d5c4c', testUuid='aa5c779a-8cc7-47a9-9112-d2ff348898b4', status='null'}
+2019-02-28 16:49:17.924 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@32d314217 pairs: {POST /tng-vnv-planner/mock/tee/test-suite-results HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 327}
+2019-02-28 16:49:17.934 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@2a1608195 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:17 GMT}
+2019-02-28 16:49:17.935  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestExecutionEngine.executeTests call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tee/test-suite-results, status: 200
+2019-02-28 16:49:17.935  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestExecutionEngine          : ##vnvlog-v.2 TestExecutionEngine.executeTests - end POST_request_to_TEE with testSuiteResult.uuid: 95e1b70f-d60e-430f-8222-80ca590db5c9
+2019-02-28 16:49:17.940 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@3c5641c77 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6b0cccae-4c03-414c-9717-b200121ed725 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 675}
+2019-02-28 16:49:17.950 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@168e38705 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:17 GMT}
+2019-02-28 16:49:17.954  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+2019-02-28 16:49:17.954  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.workflow.WorkflowManager       : ##vnvlog: after executeTests with testSuiteResults(#1)
+2019-02-28 16:49:17.954  INFO 14688 --- [  vnv-planner-2] c.g.t.v.p.r.TestPlatformManager          : ##vnvlog TestPlatformManager.destroyNsAfterTest: (
+ - TestPlanOld{ 
+uuid='6b0cccae-4c03-414c-9717-b200121ed725', status='SUCCESS', 
+nsi's(#1)=[com.github.tng.vnv.planner.model.NetworkServiceInstance(e3927ed0-788f-4bf5-90f1-c73a683ef693, READY)], 
+tsr's(#1)=[
+ 	TestSuiteResult{uuid='95e1b70f-d60e-430f-8222-80ca590db5c9', serviceUuid='d07742ed-9429-4a07-b7af-d0b24a6d5c4c', testUuid='aa5c779a-8cc7-47a9-9112-d2ff348898b4', status='SUCCESS'}]})
+2019-02-28 16:49:17.957 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@518db60d7 pairs: {POST /tng-vnv-planner/mock/tpm/requests HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json;charset=UTF-8}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 140}
+2019-02-28 16:49:17.961 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@5c5aec1d5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:17 GMT}
+2019-02-28 16:49:17.961  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestPlatformManager.destroyNsAfterTest call_endpoint: http://localhost:11409/tng-vnv-planner/mock/tpm/requests, status: 200
+2019-02-28 16:49:17.963 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@ef5bbf17 pairs: {PUT /tng-vnv-planner/mock/trr/test-plans/6b0cccae-4c03-414c-9717-b200121ed725 HTTP/1.1: null}{Accept: application/json, application/json, application/*+json, application/*+json}{Content-Type: application/json}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}{Content-Length: 612}
+2019-02-28 16:49:17.972 DEBUG 14688 --- [  vnv-planner-2] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@1357adb75 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:17 GMT}
+2019-02-28 16:49:17.974  INFO 14688 --- [  vnv-planner-2] c.g.tng.vnv.planner.helper.DebugHelper   : ##vnvlog-v.2:TestResultRepository.updatePlan call_endpoint: http://localhost:11409/tng-vnv-planner/mock/trr/test-plans/{uuid}, status: 200
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.1</a> at 28 févr. 2019 16:50:37</p>
+</div>
+</div>
+</body>
+</html>

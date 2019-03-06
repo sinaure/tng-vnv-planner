@@ -73,4 +73,9 @@ class TestController {
     List<NetworkService> listServicessByTestSuite(@PathVariable('testUuid') String uuid) {
         testCatalogue.findNssByTestSuiteUuid(uuid)
     }
+	
+	@GetMapping('/api/v1/schedulers/tests/testTag/{testTag}/services')
+	List<NetworkService> listServicessByTestTag(@PathVariable('testTag') String testTag) {
+		testCatalogue.findNssByTestTag(testTag)
+	}
 }

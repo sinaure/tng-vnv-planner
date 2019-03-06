@@ -172,7 +172,7 @@ class TestCatalogue {
         }
         nss
     }
-
+	
     //todo: this is a workaround solution to bypass the null packageId issue for test's
     //todo-y2: remove the packageId from all the TestSuiteOld,TestPlanOld,TestResult
     def findPackageId(TestSuiteOld testSuite){

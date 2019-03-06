@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.github.tng.vnv.planner.config.SwaggerApiValidationSpec</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.github.tng.vnv.planner.config.SwaggerApiValidationSpec</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.github.tng.vnv.planner.config.html">com.github.tng.vnv.planner.config</a> &gt; SwaggerApiValidationSpec</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.638s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">generated dependencies api should match swagger-mock.json</td>
+<td>0.203s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">generated spec should match swagger.json</td>
+<td>0.435s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2019-02-28 16:49:01.597  INFO 14688 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.mrduguo.spring.test.AbstractSpec]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-28 16:49:01.623  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-28 16:49:01.625  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2019-02-28 16:49:01.626  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2019-02-28 16:49:01.628  INFO 14688 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@429625f1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@27b798b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@16eeca71, org.springframework.test.context.support.DirtiesContextTestExecutionListener@801a1b6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7bcba4ea, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@22252d39, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@42f8c64e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4771c3b6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@613bd346, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6afc66bd]
+2019-02-28 16:49:01.861 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@211cc9b95 pairs: {GET /tng-vnv-planner/v2/api-docs HTTP/1.1: null}{Accept: text/plain, application/json, application/*+json, */*}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:02.057 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@392c1ef5 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:01 GMT}
+2019-02-28 16:49:02.124 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@25a9f5855 pairs: {GET /tng-vnv-planner/v2/api-docs?group=dependencies HTTP/1.1: null}{Accept: text/plain, application/json, application/*+json, */*}{User-Agent: Java/1.8.0_201}{Host: localhost:11409}{Connection: keep-alive}
+2019-02-28 16:49:02.241 DEBUG 14688 --- [    Test worker] s.n.www.protocol.http.HttpURLConnection  : sun.net.www.MessageHeader@17aab7765 pairs: {null: HTTP/1.1 200}{X-Application-Context: application:test,DESKTOP-38568DE:11409}{Content-Type: application/json;charset=UTF-8}{Transfer-Encoding: chunked}{Date: Thu, 28 Feb 2019 15:49:01 GMT}
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.1</a> at 28 févr. 2019 16:50:37</p>
+</div>
+</div>
+</body>
+</html>
