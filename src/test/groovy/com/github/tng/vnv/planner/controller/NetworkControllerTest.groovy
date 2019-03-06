@@ -6,7 +6,9 @@ import com.github.tng.vnv.planner.restmock.TestPlatformManagerMock
 import com.github.tng.vnv.planner.restmock.TestResultRepositoryMock
 import com.github.mrduguo.spring.test.AbstractSpec
 import org.springframework.beans.factory.annotation.Autowired
-    import spock.lang.Ignore
+import org.springframework.web.bind.annotation.GetMapping
+
+import spock.lang.Ignore
 
 class NetworkControllerTest extends AbstractSpec {
 
@@ -15,6 +17,7 @@ class NetworkControllerTest extends AbstractSpec {
     final def NETWORK_SERVICE_HTTP_ADVANCED_ID='d07742ed-9429-4a07-b7af-d0b24a6d5c4c'
     final def TEST_HTTP_ADVANCED_ID='aa5c779a-8cc7-47a9-9112-d2ff348898b4'
     final def PACKAGE_OF_TEST_HTTP_ADVANCED_ID='a3acb16d-c314-4122-9b3d-9c180547d580'
+	final def TEST_SUITE_TAG='aux_test'
 
     @Autowired
     TestPlatformManagerMock testPlatformManagerMock
@@ -129,5 +132,17 @@ class NetworkControllerTest extends AbstractSpec {
         testExecutionEngineMock.reset()
         testResultRepositoryMock.reset()
     }
+	
+	void "retrieval of a list of NetworkServices whith tag existing on tags list"() {
+		when:
+		List nss = getForEntity('/tng-vnv-planner/api/v1/schedulers/services/testTag/{testTag}/services', List,TEST_SUITE_TAG).body
+		then:
 
+		nss.size() == 1
+
+		cleanup:
+		testPlatformManagerMock.reset()
+
+	}
+	
 }
