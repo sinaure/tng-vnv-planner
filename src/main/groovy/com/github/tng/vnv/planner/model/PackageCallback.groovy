@@ -34,30 +34,25 @@
 
 package com.github.tng.vnv.planner.model
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import groovy.transform.EqualsAndHashCode
 import io.swagger.annotations.ApiModelProperty
-
 import javax.validation.constraints.NotNull
 
-@EqualsAndHashCode(includes = "testUuid" )
-class TestSuiteOld {
+class PackageCallback {
+
+    @ApiModelProperty(
+            value = 'Event Name',
+            allowEmptyValue = true,
+            example = 'UPDATED',
+            required = true
+    )
+    @NotNull
+    String eventName
 
     @ApiModelProperty(required = true)
     @NotNull
-    @JsonProperty("uuid")
-    String testUuid
     String packageId
-    TestDescriptor testd
+
+    String packageLocation
 
 
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("TestSuiteOld{");
-        sb.append("uuid='").append(testUuid).append('\'');
-        sb.append(", packageId='").append(packageId).append('\'');
-        sb.append(", testd=").append(testd);
-        sb.append('}');
-        return sb.toString();
-    }
 }

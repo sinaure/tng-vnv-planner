@@ -32,20 +32,27 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.tng.vnv.planner.model
+package com.github.tng.vnv.planner.oldlcm.model
 
-import groovy.transform.ToString
 
-@ToString(includes = 'instanceUuid, status')
-class NetworkServiceInstance {
+import groovy.transform.EqualsAndHashCode
 
-    String instanceUuid
-
-    String serviceUuid
-
-    String name
-
+@EqualsAndHashCode
+class TestPlanOld {
+    String uuid
+    String packageId
+    List<NetworkServiceInstance> networkServiceInstances = []
+    List<TestSuiteResult> testSuiteResults = []
     String status
 
-    Map runtime
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("\n - TestPlanOld{ \n");
+        sb.append("uuid='").append(uuid).append('\'');
+        sb.append(", status='").append(status).append('\'');
+        sb.append(", \nnsi's(#${networkServiceInstances.size()})=").append(networkServiceInstances);
+        sb.append(", \ntsr's(#${testSuiteResults.size()})=").append(testSuiteResults);
+        sb.append('}');
+        return sb.toString();
+    }
 }

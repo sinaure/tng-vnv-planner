@@ -32,27 +32,44 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.tng.vnv.planner.event
+package com.github.tng.vnv.planner.restmock
 
-import io.swagger.annotations.ApiModelProperty
-import javax.validation.constraints.NotNull
 
-class OnPackageChangeEvent {
+import com.github.tng.vnv.planner.model.NsRequest
+import com.github.tng.vnv.planner.model.NsResponse
+import org.springframework.web.bind.annotation.*
 
-    @ApiModelProperty(
-            value = 'Event Name',
-            allowEmptyValue = true,
-            example = 'UPDATED',
-            required = true
-    )
-    @NotNull
-    String eventName
+@RestController
+class CuratorMock {
 
-    @ApiModelProperty(required = true)
-    @NotNull
-    String packageId
+    Map<String, NsResponse> networkServiceInstances = [:]
 
-    String packageLocation
+    void reset() {
+        networkServiceInstances.clear()
+    }
 
+    @PostMapping('/mock/tpm/requests')
+    NsResponse deployNsForTest(@RequestBody NsRequest nsRequest) {
+        def networkServiceInstance = new NsResponse(
+                instanceUuid: nsRequest.requestType == 'CREATE_SERVICE' ? UUID.randomUUID().toString() : nsRequest.instanceUuid,
+                serviceUuid: nsRequest.serviceUuid,
+                status: nsRequest.requestType == 'CREATE_SERVICE' ? 'CREATED' : 'TERMINATED',
+        )
+        networkServiceInstance.id=networkServiceInstance.instanceUuid
+        networkServiceInstances[networkServiceInstance.id] = networkServiceInstance
+        networkServiceInstance
+    }
+
+    @GetMapping('/mock/tpm/requests')
+    List<NsResponse> getDeployedNs() {
+        []
+    }
+
+    @GetMapping('/mock/tpm/requests/{requestId}')
+    NsResponse getNsForTest(@PathVariable('requestId') String requestId) {
+        def nsi=networkServiceInstances[requestId]
+        nsi.status = 'READY'
+        nsi
+    }
 
 }

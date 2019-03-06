@@ -32,44 +32,33 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.tng.vnv.planner.restmock
+package com.github.tng.vnv.planner.oldlcm.model
+
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.github.tng.vnv.planner.model.TestDescriptor
+import groovy.transform.EqualsAndHashCode
+import io.swagger.annotations.ApiModelProperty
+
+import javax.validation.constraints.NotNull
+
+@EqualsAndHashCode(includes = "testUuid" )
+class TestSuiteOld {
+
+    @ApiModelProperty(required = true)
+    @NotNull
+    @JsonProperty("uuid")
+    String testUuid
+    String packageId
+    TestDescriptor testd
 
 
-import com.github.tng.vnv.planner.model.TestPlanOld
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
-
-@RestController
-class TestResultRepositoryMock {
-
-    Map<String, TestPlanOld> testPlans = [:]
-    def numOfCallsForTestPlanCreation = 0
-    def numOfCallsForTestPlanUpdate = 0
-
-    void reset() {
-        testPlans.clear()
-    }
-
-    @GetMapping('/mock/trr/test-plans')
-    List listTestPlans() {
-        new ArrayList(testPlans.values())
-    }
-
-    @PostMapping('/mock/trr/test-plans')
-    TestPlanOld createTestPlan(@RequestBody TestPlanOld testPlan) {
-        ++numOfCallsForTestPlanCreation
-        testPlan.uuid = UUID.randomUUID().toString()
-        testPlans[testPlan.uuid] = testPlan
-    }
-
-    @PutMapping('/mock/trr/test-plans/{testPlanId:.+}')
-    TestPlanOld updatePlan(@RequestBody TestPlanOld testPlan, @PathVariable('testPlanId') String testPlanId) {
-        ++numOfCallsForTestPlanUpdate
-         testPlan.uuid = testPlanId
-        testPlans[testPlan.uuid] = testPlan
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("TestSuiteOld{");
+        sb.append("uuid='").append(testUuid).append('\'');
+        sb.append(", packageId='").append(packageId).append('\'');
+        sb.append(", testd=").append(testd);
+        sb.append('}');
+        return sb.toString();
     }
 }

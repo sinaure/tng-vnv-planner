@@ -32,36 +32,32 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.tng.vnv.planner.model
-
-import groovy.transform.EqualsAndHashCode
-import io.swagger.annotations.ApiModelProperty
-
-import javax.validation.constraints.NotNull
-
-@EqualsAndHashCode
-class TestSuiteResult {
-    String packageId
-    String uuid
-    String testPlanId
-    String instanceUuid
-    String serviceUuid
-
-    @ApiModelProperty(required = true)
-    @NotNull
-    String testUuid
-
-    String status
+package com.github.tng.vnv.planner.oldlcm.restmock
 
 
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("\n \tTestSuiteResult{");
-        sb.append("uuid='").append(uuid).append('\'');
-        sb.append(", serviceUuid='").append(serviceUuid).append('\'');
-        sb.append(", testUuid='").append(testUuid).append('\'');
-        sb.append(", status='").append(status).append('\'');
-        sb.append('}');
-        return sb.toString();
+import com.github.tng.vnv.planner.oldlcm.model.TestSuiteResult
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class ExecutorMock {
+
+    Map<String, TestSuiteResult> testSuiteResults = [:]
+
+    def numOfExecutions = 0
+
+    void reset() {
+        testSuiteResults.clear()
     }
+
+    @PostMapping('/mock/tee/test-suite-results')
+    TestSuiteResult executeTestAgainstNs(@RequestBody TestSuiteResult testSuiteResult) {
+        ++numOfExecutions
+        testSuiteResult.uuid = UUID.randomUUID().toString()
+        testSuiteResult.status = 'SUCCESS'
+        testSuiteResults[testSuiteResult.uuid] = testSuiteResult
+        testSuiteResult
+    }
+
 }

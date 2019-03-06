@@ -1,9 +1,9 @@
 package com.github.tng.vnv.planner.controller
 
 import com.github.tng.vnv.planner.restmock.TestCatalogueMock
-import com.github.tng.vnv.planner.restmock.TestExecutionEngineMock
-import com.github.tng.vnv.planner.restmock.TestPlatformManagerMock
-import com.github.tng.vnv.planner.restmock.TestResultRepositoryMock
+import com.github.tng.vnv.planner.oldlcm.restmock.ExecutorMock
+import com.github.tng.vnv.planner.restmock.CuratorMock
+import com.github.tng.vnv.planner.restmock.TestPlanRepositoryMock
 import com.github.mrduguo.spring.test.AbstractSpec
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,16 +20,16 @@ class NetworkControllerTest extends AbstractSpec {
 	final def TEST_SUITE_TAG='aux_test'
 
     @Autowired
-    TestPlatformManagerMock testPlatformManagerMock
+    CuratorMock curatorMock
 
     @Autowired
-    TestExecutionEngineMock testExecutionEngineMock
+    ExecutorMock executorMock
 
     @Autowired
     TestCatalogueMock testCatalogueMock
 
     @Autowired
-    TestResultRepositoryMock testResultRepositoryMock
+    TestPlanRepositoryMock testPlanRepositoryMock
 
     void "schedule single NetworkService should produce successfully 1 Result for 1 testPlan"() {
 
@@ -41,24 +41,24 @@ class NetworkControllerTest extends AbstractSpec {
 
         then:
         Thread.sleep(10000L);
-        while (testExecutionEngineMock.testSuiteResults.values().last().status!='SUCCESS')
+        while (executorMock.testSuiteResults.values().last().status!='SUCCESS')
             Thread.sleep(1000L);
-        testPlatformManagerMock.networkServiceInstances.size()==1
+        curatorMock.networkServiceInstances.size()==1
 
-        testExecutionEngineMock.testSuiteResults.size()==1
+        executorMock.testSuiteResults.size()==1
 
-        testResultRepositoryMock.testPlans.size()==1
-        testResultRepositoryMock.testPlans.values().last().status=='SUCCESS'
-        testResultRepositoryMock.testPlans.values().last().networkServiceInstances.size()==1
-        testResultRepositoryMock.testPlans.values().each{testPlan ->
+        testPlanRepositoryMock.testPlans.size()==1
+        testPlanRepositoryMock.testPlans.values().last().status=='SUCCESS'
+        testPlanRepositoryMock.testPlans.values().last().networkServiceInstances.size()==1
+        testPlanRepositoryMock.testPlans.values().each{testPlan ->
             testPlan.testSuiteResults.size()==1
         }
-        testResultRepositoryMock.testPlans.values().last().testSuiteResults.last().status=='SUCCESS'
+        testPlanRepositoryMock.testPlans.values().last().testSuiteResults.last().status=='SUCCESS'
 
         cleanup:
-        testPlatformManagerMock.reset()
-        testExecutionEngineMock.reset()
-        testResultRepositoryMock.reset()
+        curatorMock.reset()
+        executorMock.reset()
+        testPlanRepositoryMock.reset()
     }
 
     void "retrieval of a single test suite's related testSuites should successfully all the tag related tests"() {
@@ -68,38 +68,8 @@ class NetworkControllerTest extends AbstractSpec {
 
         tss.size() == 1
         cleanup:
-        testPlatformManagerMock.reset()
+        curatorMock.reset()
 
-    }
-
-    void "schedule Service GOBETWEEN with tag: http-advanced should run once with TEST-HTTP-BENCHMARK-ADVANCED with 1 Result and 1 testPlan"() {
-
-        when:
-        def entity = postForEntity('/tng-vnv-planner/api/v1/schedulers/services',
-                ["service_uuid": NETWORK_SERVICE_HTTP_ADVANCED_ID]
-                , Void.class)
-
-        then:
-        Thread.sleep(10000L);
-        while (testPlatformManagerMock.networkServiceInstances.values().last().status!='TERMINATED')
-            Thread.sleep(1000L);
-        testPlatformManagerMock.networkServiceInstances.size()==1
-
-
-        testExecutionEngineMock.testSuiteResults.size()==1
-        testExecutionEngineMock.testSuiteResults.values().testUuid[0] == TEST_HTTP_ADVANCED_ID
-        testExecutionEngineMock.testSuiteResults.values().last().status=='SUCCESS'
-
-        testResultRepositoryMock.testPlans.size()==1
-        testResultRepositoryMock.testPlans.values().last().status=='SUCCESS'
-        testResultRepositoryMock.testPlans.values().last().networkServiceInstances.size()==1
-        testResultRepositoryMock.testPlans.values().last().testSuiteResults.packageId[0]==PACKAGE_OF_TEST_HTTP_ADVANCED_ID
-        testResultRepositoryMock.testPlans.values().last().testSuiteResults.last().status=='SUCCESS'
-
-        cleanup:
-        testPlatformManagerMock.reset()
-        testExecutionEngineMock.reset()
-        testResultRepositoryMock.reset()
     }
 
     @Ignore
@@ -132,7 +102,38 @@ class NetworkControllerTest extends AbstractSpec {
         testExecutionEngineMock.reset()
         testResultRepositoryMock.reset()
     }
-	
+
+
+    void "schedule Service GOBETWEEN with tag: http-advanced should run once with TEST-HTTP-BENCHMARK-ADVANCED with 1 Result and 1 testPlan"() {
+
+        when:
+        def entity = postForEntity('/tng-vnv-planner/api/v1/schedulers/services',
+                ["service_uuid": NETWORK_SERVICE_HTTP_ADVANCED_ID]
+                , Void.class)
+
+        then:
+        Thread.sleep(10000L);
+        while (testPlatformManagerMock.networkServiceInstances.values().last().status!='TERMINATED')
+            Thread.sleep(1000L);
+        testPlatformManagerMock.networkServiceInstances.size()==1
+
+
+        testExecutionEngineMock.testSuiteResults.size()==1
+        testExecutionEngineMock.testSuiteResults.values().testUuid[0] == TEST_HTTP_ADVANCED_ID
+        testExecutionEngineMock.testSuiteResults.values().last().status=='SUCCESS'
+
+        testResultRepositoryMock.testPlans.size()==1
+        testResultRepositoryMock.testPlans.values().last().status=='SUCCESS'
+        testResultRepositoryMock.testPlans.values().last().networkServiceInstances.size()==1
+        testResultRepositoryMock.testPlans.values().last().testSuiteResults.packageId[0]==PACKAGE_OF_TEST_HTTP_ADVANCED_ID
+        testResultRepositoryMock.testPlans.values().last().testSuiteResults.last().status=='SUCCESS'
+
+        cleanup:
+        testPlatformManagerMock.reset()
+        testExecutionEngineMock.reset()
+        testResultRepositoryMock.reset()
+    }
+
 	void "retrieval of a list of NetworkServices whith tag existing on tags list"() {
 		when:
 		List nss = getForEntity('/tng-vnv-planner/api/v1/schedulers/services/testTag/{testTag}/services', List,TEST_SUITE_TAG).body
