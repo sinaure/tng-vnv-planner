@@ -43,6 +43,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Repository
 import org.springframework.web.client.RestTemplate
+import org.springframework.web.util.UriComponentsBuilder
 
 import static com.github.tng.vnv.planner.utils.DebugHelper.callExternalEndpoint
 
@@ -73,6 +74,9 @@ class NetworkServiceRepository {
     }
 
     List<NetworkService> findNssByTestTag(String tag) {
+		UriComponentsBuilder builder = UriComponentsBuilder
+		.fromUriString(serviceListByTagEndpoint)
+		.queryParam("test_tag", tag)
         DebugHelper.callExternalEndpoint(restTemplateWithAuth.getForEntity(serviceListByTagEndpoint, NetworkService[], tag),
                 'TestPlanRepository.findNssByTestTag',serviceListByTagEndpoint).body
     }
