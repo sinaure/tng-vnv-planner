@@ -72,12 +72,14 @@ class NetworkServiceRepository {
         callExternalEndpoint(restTemplateWithAuth.getForEntity(serviceMetadataEndpoint, Object.class, uuid),
                 'TestCatalogue.loadPackageMetadata',serviceMetadataEndpoint).body.each {println it}
     }
-
-    List<NetworkService> findNssByTestTag(String tag) {
+	
+	List<Object> findNssByTestTag(String tag) {
 		UriComponentsBuilder builder = UriComponentsBuilder
 		.fromUriString(serviceListByTagEndpoint)
-		.queryParam("test_tag", tag)
-        DebugHelper.callExternalEndpoint(restTemplateWithAuth.getForEntity(serviceListByTagEndpoint, NetworkService[], tag),
-                'TestPlanRepository.findNssByTestTag',serviceListByTagEndpoint).body
-    }
+		.queryParam("testing_tag", tag);
+		println "*****************  "+builder.toUriString()+" ****************************"
+		DebugHelper.callExternalEndpoint(restTemplateWithAuth.getForEntity(builder.toUriString(),  Object[].class),
+				'NetworkServiceRepository.findNssByTestTag',serviceListByTagEndpoint).body
+	}
+	
 }
