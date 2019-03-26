@@ -36,6 +36,7 @@ package com.github.tng.vnv.planner.controller
 
 
 import com.github.mrduguo.spring.test.AbstractSpec
+import com.github.tng.vnv.planner.model.TestDescriptor
 import com.github.tng.vnv.planner.repository.NetworkServiceRepository
 import com.github.tng.vnv.planner.restmock.CatalogueMock
 import com.github.tng.vnv.planner.restmock.CuratorMock
@@ -63,7 +64,7 @@ class NetworkServiceControllerTest extends AbstractSpec {
     TestPlanRepositoryMock testPlanRepositoryMock
 	
 	@Autowired
-	NetworkServiceRepository networkServiceRepository
+	NetworkServiceService networkServiceService
 
     void "retrieval of a single test suite's related tests should successfully all the tag related tests"() {
         when:
@@ -84,13 +85,9 @@ class NetworkServiceControllerTest extends AbstractSpec {
 		
 		Set nss = new HashSet();
 		tss?.each { td ->
-			td.test_execution?.each { tag -> 
-				println tag.test_tag
-				println networkServiceRepository.findNssByTestTag(tag.test_tag).size()
-				nss.addAll(networkServiceRepository.findNssByTestTag(tag.test_tag));
-			}
+			nss.addAll(networkServiceService.findByTest(td));
 		}
-		nss.size() == 7
+		nss.size() == 56
 
 	}
 	

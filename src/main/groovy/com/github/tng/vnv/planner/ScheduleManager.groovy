@@ -45,8 +45,6 @@ import org.springframework.stereotype.Component
 
 import java.util.concurrent.CompletableFuture
 
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.SCHEDULED
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.UPDATED
 
 
 @Log

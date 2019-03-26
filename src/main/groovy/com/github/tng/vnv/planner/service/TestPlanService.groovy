@@ -46,8 +46,6 @@ import groovy.util.logging.Log
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.DELETED
-
 @Log
 @Service
 class TestPlanService {

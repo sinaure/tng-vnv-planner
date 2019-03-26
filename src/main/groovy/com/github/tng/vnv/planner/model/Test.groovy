@@ -34,6 +34,7 @@
 
 package com.github.tng.vnv.planner.model
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
@@ -42,6 +43,7 @@ import io.swagger.annotations.ApiModelProperty
 import javax.validation.constraints.NotNull
 
 @EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Test {
     @ApiModelProperty(required = true)
     @NotNull

@@ -44,11 +44,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.CANCELLED
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.COMPLETED
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.DELETED
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.REJECTED
-import static com.github.tng.vnv.planner.utils.TEST_PLAN_STATUS.ERROR
 
 @Log
 @Component
