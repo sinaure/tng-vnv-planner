@@ -54,10 +54,10 @@ class NetworkServiceService {
     }
 
     Set<NetworkService> findByTest(TestDescriptor td) {
-        def ns = [] as HashSet<NetworkService>
+        Set<NetworkService> nss=  new HashSet<NetworkService>();
         td.testExecution?.each { tt ->
-            ns << networkServiceRepository.findNssByTestTag(tt.testTag)
+            nss << networkServiceRepository.findNssByTestTag(tt.testTag)
         }
-        ns
+        nss.flatten()
     }
 }

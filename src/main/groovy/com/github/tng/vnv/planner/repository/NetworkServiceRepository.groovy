@@ -71,7 +71,7 @@ class NetworkServiceRepository {
 	List<NetworkService> findNssByTestTag(String tag) {
 		UriComponentsBuilder builder = UriComponentsBuilder
 		.fromUriString(serviceListEndpoint)
-		.queryParam("testing_tag", tag);
+		.queryParam("test_tag", tag);
 		println "*****************  "+builder.toUriString()+" ****************************"
 		DebugHelper.callExternalEndpoint(restTemplateWithAuth.getForEntity(builder.toUriString(),  NetworkService[]),
 				'NetworkServiceRepository.findNssByTestTag',serviceListEndpoint).body

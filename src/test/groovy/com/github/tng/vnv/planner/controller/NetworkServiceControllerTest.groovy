@@ -44,7 +44,7 @@ import com.github.tng.vnv.planner.restmock.CatalogueMock
 import com.github.tng.vnv.planner.restmock.CuratorMock
 import com.github.tng.vnv.planner.restmock.TestPlanRepositoryMock
 import com.github.tng.vnv.planner.service.NetworkServiceService
-
+import groovy.json.JsonBuilder
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 
@@ -84,14 +84,18 @@ class NetworkServiceControllerTest extends AbstractSpec {
 		List<TestDescriptor> tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
 		then:
 		
-		Set<NetworkService> nss = new HashSet();
+		Map<String , NetworkService> nss = new HashMap<String , NetworkService>();
 		tss?.each { td ->
-			nss.addAll(networkServiceService.findByTest(td));
+			networkServiceService.findByTest(td)?.each { ns ->
+				nss.put(ns.uuid, ns);
+			}
 		}
-		nss?.each { ns ->
-			println ns
+		
+		nss.values()?.each { ns ->
+			println new JsonBuilder( ns ).toPrettyString() 
+			println "*************************"
 		}
-		nss.size() == 8
+		nss.values().size() == 6
 		
 		cleanup:
 		testPlanRepositoryMock.reset()

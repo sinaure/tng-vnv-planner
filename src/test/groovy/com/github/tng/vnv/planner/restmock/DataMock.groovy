@@ -77,8 +77,9 @@ class DataMock {
 			}
 		}
 		println "***********************************"
-		println nss.size()
-		nss
+		println nss.flatten().size()
+		nss.flatten()
+
 	}
 
 	static def getTestByTag(String tag) {
