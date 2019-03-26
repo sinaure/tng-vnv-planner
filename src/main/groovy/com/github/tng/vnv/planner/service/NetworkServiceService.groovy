@@ -53,13 +53,11 @@ class NetworkServiceService {
         networkServiceRepository.findByUuid(uuid).nsd
     }
 
-    Set<NetworkServiceDescriptor> findByTest(TestDescriptor td) {
-        def nsds = [] as HashSet<NetworkServiceDescriptor>
+    Set<NetworkService> findByTest(TestDescriptor td) {
+        def ns = [] as HashSet<NetworkService>
         td.testExecution?.each { tt ->
-            networkServiceRepository.findNssByTestTag(tt.testTag)?.each { service ->
-                nsds <<  service.nsd
-            }
+            ns << networkServiceRepository.findNssByTestTag(tt.testTag)
         }
-        nsds
+        ns
     }
 }

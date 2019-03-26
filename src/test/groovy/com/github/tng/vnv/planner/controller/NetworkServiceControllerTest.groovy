@@ -36,6 +36,7 @@ package com.github.tng.vnv.planner.controller
 
 
 import com.github.mrduguo.spring.test.AbstractSpec
+import com.github.tng.vnv.planner.model.NetworkService
 import com.github.tng.vnv.planner.model.NetworkServiceDescriptor
 import com.github.tng.vnv.planner.model.TestDescriptor
 import com.github.tng.vnv.planner.repository.NetworkServiceRepository
@@ -83,11 +84,14 @@ class NetworkServiceControllerTest extends AbstractSpec {
 		List<TestDescriptor> tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
 		then:
 		
-		Set<NetworkServiceDescriptor> nss = new HashSet();
+		Set<NetworkService> nss = new HashSet();
 		tss?.each { td ->
 			nss.addAll(networkServiceService.findByTest(td));
 		}
-		nss.size() == 56
+		nss?.each { ns ->
+			println ns
+		}
+		nss.size() == 8
 		
 		cleanup:
 		testPlanRepositoryMock.reset()
