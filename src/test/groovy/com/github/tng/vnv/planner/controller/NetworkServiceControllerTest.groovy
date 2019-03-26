@@ -36,9 +36,12 @@ package com.github.tng.vnv.planner.controller
 
 
 import com.github.mrduguo.spring.test.AbstractSpec
+import com.github.tng.vnv.planner.repository.NetworkServiceRepository
 import com.github.tng.vnv.planner.restmock.CatalogueMock
 import com.github.tng.vnv.planner.restmock.CuratorMock
 import com.github.tng.vnv.planner.restmock.TestPlanRepositoryMock
+import com.github.tng.vnv.planner.service.NetworkServiceService
+
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 
@@ -47,7 +50,6 @@ import spock.lang.Ignore
 class NetworkServiceControllerTest extends AbstractSpec {
 
     final def NETWORK_SERVICE_ID = 'input0ns-f213-4fae-8d3f-04358e1e1445'
-	final def TAGS = '[latency,http]'
 
 
     @Autowired
@@ -55,22 +57,46 @@ class NetworkServiceControllerTest extends AbstractSpec {
 
 
     @Autowired
-
     CatalogueMock catalogueMock
 
     @Autowired
     TestPlanRepositoryMock testPlanRepositoryMock
+	
+	@Autowired
+	NetworkServiceRepository networkServiceRepository
 
     void "retrieval of a single test suite's related tests should successfully all the tag related tests"() {
         when:
         List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', List, NETWORK_SERVICE_ID).body
         then:
-
+		
+		tss?.each { td -> 
+			println td.test_execution
+		}
         tss.size() == 4
         cleanup:
         curatorMock.reset()
 
     }
+	
+	void "retrieval of a list of NS's related to test tags"() {
+		when:
+		List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', List, NETWORK_SERVICE_ID).body
+		then:
+		
+		Set nss = new HashSet();
+		tss?.each { td ->
+			td.test_execution?.each { tag -> 
+				println tag.test_tag
+				println networkServiceRepository.findNssByTestTag(tag.test_tag).size()
+				nss.addAll(networkServiceRepository.findNssByTestTag(tag.test_tag));
+			}
+		}
+		nss.size() == 7
+		cleanup:
+		curatorMock.reset()
+
+	}
 	
 
 }
