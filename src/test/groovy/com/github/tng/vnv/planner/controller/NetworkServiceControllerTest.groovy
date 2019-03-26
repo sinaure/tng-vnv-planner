@@ -91,8 +91,6 @@ class NetworkServiceControllerTest extends AbstractSpec {
 			}
 		}
 		nss.size() == 7
-		cleanup:
-		curatorMock.reset()
 
 	}
 	
