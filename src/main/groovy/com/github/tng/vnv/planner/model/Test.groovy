@@ -43,7 +43,6 @@ import io.swagger.annotations.ApiModelProperty
 import javax.validation.constraints.NotNull
 
 @EqualsAndHashCode
-@JsonIgnoreProperties(ignoreUnknown = true)
 class Test {
     @ApiModelProperty(required = true)
     @NotNull

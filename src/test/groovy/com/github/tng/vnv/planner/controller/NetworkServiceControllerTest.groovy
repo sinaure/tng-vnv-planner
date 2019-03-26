@@ -68,19 +68,21 @@ class NetworkServiceControllerTest extends AbstractSpec {
 
     void "retrieval of a single test suite's related tests should successfully all the tag related tests"() {
         when:
-        List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', List, NETWORK_SERVICE_ID).body
+        List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
         then:
 		
 		tss?.each { td -> 
-			println td.test_execution
+			println td.testExecution
 		}
         tss.size() == 4
-
+		
+		cleanup:
+		testPlanRepositoryMock.reset()
     }
 	
 	void "retrieval of a list of NS's related to test tags"() {
 		when:
-		List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', List, NETWORK_SERVICE_ID).body
+		List<TestDescriptor> tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
 		then:
 		
 		Set nss = new HashSet();
@@ -88,6 +90,9 @@ class NetworkServiceControllerTest extends AbstractSpec {
 			nss.addAll(networkServiceService.findByTest(td));
 		}
 		nss.size() == 56
+		
+		cleanup:
+		testPlanRepositoryMock.reset()
 
 	}
 	
