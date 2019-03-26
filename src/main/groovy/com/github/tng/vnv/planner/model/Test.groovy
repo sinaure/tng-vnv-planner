@@ -58,9 +58,11 @@ class TestDescriptor implements Serializable {
     String name
     String version
     String description
+	@JsonProperty("test_execution")
     List<TestTag> testExecution
 }
 
 class TestTag{
+	@JsonProperty("test_tag")
     String testTag
 }

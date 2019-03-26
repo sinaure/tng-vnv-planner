@@ -36,6 +36,7 @@ package com.github.tng.vnv.planner.controller
 
 
 import com.github.mrduguo.spring.test.AbstractSpec
+import com.github.tng.vnv.planner.model.NetworkServiceDescriptor
 import com.github.tng.vnv.planner.model.TestDescriptor
 import com.github.tng.vnv.planner.repository.NetworkServiceRepository
 import com.github.tng.vnv.planner.restmock.CatalogueMock
@@ -68,12 +69,9 @@ class NetworkServiceControllerTest extends AbstractSpec {
 
     void "retrieval of a single test suite's related tests should successfully all the tag related tests"() {
         when:
-        List tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
+        List<TestDescriptor> tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
         then:
 		
-		tss?.each { td -> 
-			println td.testExecution
-		}
         tss.size() == 4
 		
 		cleanup:
@@ -85,7 +83,7 @@ class NetworkServiceControllerTest extends AbstractSpec {
 		List<TestDescriptor> tss = getForEntity('/tng-vnv-planner/api/v1/test-plans/services/{serviceUuid}/tests', TestDescriptor[], NETWORK_SERVICE_ID).body
 		then:
 		
-		Set nss = new HashSet();
+		Set<NetworkServiceDescriptor> nss = new HashSet();
 		tss?.each { td ->
 			nss.addAll(networkServiceService.findByTest(td));
 		}

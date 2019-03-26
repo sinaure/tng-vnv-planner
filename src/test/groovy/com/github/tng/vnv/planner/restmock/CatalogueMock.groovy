@@ -89,6 +89,14 @@ class CatalogueMock {
 		}
 		DataMock.getTestByTag(tag)
     }
+	
+	@GetMapping('/mock/gk/tests/services')
+	List<Test> findTestsServices(@RequestParam(value='test_tag',required=false) String tag) {
+		if(!tag) {
+			return  DataMock.services
+		}
+		DataMock.getServiceByTag(tag)
+	}
 
     @GetMapping('/mock/gk/tests/descriptors/{uuid:.+}')
     def findTest(@PathVariable('uuid') String uuid) {

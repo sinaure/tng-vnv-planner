@@ -55,8 +55,8 @@ class NetworkServiceRepository {
     @Qualifier('restTemplateWithAuth')
     RestTemplate restTemplateWithAuth
 
-    @Value('${app.gk.service.list.by.tag.endpoint}')
-    def serviceListByTagEndpoint
+    @Value('${app.gk.service.list.endpoint}')
+    def serviceListEndpoint
 
     @Value('${app.gk.service.metadata.endpoint}')
     def serviceMetadataEndpoint
@@ -70,10 +70,10 @@ class NetworkServiceRepository {
 
 	List<NetworkService> findNssByTestTag(String tag) {
 		UriComponentsBuilder builder = UriComponentsBuilder
-		.fromUriString(serviceListByTagEndpoint)
+		.fromUriString(serviceListEndpoint)
 		.queryParam("testing_tag", tag);
 		println "*****************  "+builder.toUriString()+" ****************************"
 		DebugHelper.callExternalEndpoint(restTemplateWithAuth.getForEntity(builder.toUriString(),  NetworkService[]),
-				'NetworkServiceRepository.findNssByTestTag',serviceListByTagEndpoint).body
+				'NetworkServiceRepository.findNssByTestTag',serviceListEndpoint).body
 	}
 }
